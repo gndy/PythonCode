@@ -29,12 +29,6 @@ def main():
         if(byte.__len__()>7000):
             file_name=image_url.split('/')[-1]
             #file_name=file_name.replace(':','_')
-            ''' end=file_name.__len__()
-            if(file_name.rfind('!')!=-1):
-                end=file_name.rfind('!')
-            if(file_name.rfind('?')!=-1):
-                end=file_name.rfind('?')
-            file_name=file_name[:end]'''
             write_file=open(dir_name+'/'+file_name,'wb')
             write_file.write(byte)
             write_file.close()

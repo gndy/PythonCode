@@ -1,4 +1,4 @@
 PythonCode
 ==========
 
-some python codes
+Some python scripts.
