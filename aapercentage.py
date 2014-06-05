@@ -5,7 +5,7 @@ from cogent import LoadSeqs, PROTEIN
 import os,sys
 '''
 author:wenlei
-获取蛋白比对序列每列的氨基酸分布
+获取蛋白比对序列每列的氨基酸分布比率
 '''
 def fileToFrequency(filePath):
 	aln = LoadSeqs(filePath,moltype = PROTEIN)
@@ -19,7 +19,7 @@ def fileToFrequency(filePath):
 
 	    line_content = line.split(',')
 	    for i in range(len(line_content)):
-		if float(line_content[i].strip()) > 0.01:
+		if (float(line_content[i].strip()) > 0.01 and header_line[i].strip() != '-' and header_line[i].strip() != 'X'):#1是突变率的阈值，2是是否为-，3是是否为X
 		   str_tmp = str_tmp+line_content[i]+','+header_line[i].strip()+'\t'
 	    str_tmp = str_tmp +'\n'
 	return str_tmp
